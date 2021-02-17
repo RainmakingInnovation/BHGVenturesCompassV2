@@ -526,7 +526,7 @@
       }
 
       #button-18 .knobs:before {
-        content: "Focus Areas";
+        content: "Final Opp Spaces";
         position: absolute;
         top: 4px;
         left: 4px;
@@ -1261,7 +1261,7 @@
           <div class="popup-tag">
             <div id="theme-tag" class="popup-tag-item">Theme</div>
             <div class="popup-tag-item-arr"> > </div>
-            <div id="focus-area-tag" class="popup-tag-item">Focus Area</div>
+            <div id="focus-area-tag" class="popup-tag-item">Final Opp Space</div>
           </div>
           <div class="popup-close">
             <i class="fas fa-times"></i>
@@ -1271,7 +1271,7 @@
               <div class="svg-container">
               </div>
                 <div class="opportunity-space-title">
-                  Focus Area
+                  Final Opp Space
                 </div>
               <div class="opportunity-space-description">
                 New, greener cement formulations that reduce carbon through replacing traditional clinker
@@ -1688,7 +1688,7 @@
               
 
               /*var focusAreaOrder = desc.map(function(d) {
-                return d["Focus Area"].toLowerCase()
+                return d["Final Opp Space"].toLowerCase()
               });
 
               var themeOrder = [... new Set(desc.map(function(d) {
@@ -1698,9 +1698,9 @@
               // Filter data for startups noot in description:
              /* new_data = []
               data.forEach(function(d) {
-                d["Focus Area"] = d["Focus Area"].toLowerCase()
-                if (d["Focus Area"] === "") {
-                  console.log('ERROR, blank Focus Area Entry:', d)
+                d["Final Opp Space"] = d["Final Opp Space"].toLowerCase()
+                if (d["Final Opp Space"] === "") {
+                  console.log('ERROR, blank Final Opp Space Entry:', d)
                 }
                 if (d["YearFounded"] === "") {
                   console.log('ERROR, blank Founded Entry:', d)
@@ -1708,8 +1708,8 @@
                 if (d["Maturity"] === "") {
                   console.log('ERROR, blank Maturity Entry:', d)
                 }
-                if (focusAreaOrder.indexOf(d["Focus Area"]) < 0) {
-                  console.log('ERROR, bad Focus Area Entry:', d)
+                if (focusAreaOrder.indexOf(d["Final Opp Space"]) < 0) {
+                  console.log('ERROR, bad Final Opp Space Entry:', d)
                 } else {
                   new_data.push(d)
                 }
@@ -1751,7 +1751,7 @@
             });
 
             data = data.filter(function(d) {
-              return d["Focus Area"] !== "";
+              return d["Final Opp Space"] !== "";
             });
 
             data = data.filter(function(d) {
@@ -2142,7 +2142,7 @@
               .append("path")
               .classed("segment-band", true)
               .attr("d", segmentLabelBandArc)
-              .attr("fill", "#EF959C")
+              .attr("fill", "#D22130")
 
 
               var tmpOppSpaceLabels = tmp_chartSVG
@@ -2237,7 +2237,7 @@
                           })
                           .attr("opacity", function(d) {
                             if (
-                              d["Focus Area"] === chartPieData[i].data.value.key
+                              d["Final Opp Space"] === chartPieData[i].data.value.key
                             ) {
                               return d.opacity;
                             } else {
@@ -2291,7 +2291,7 @@
                           })
                           .attr("opacity", function(d) {
                             if (
-                              d["Focus Area"] === chartPieData[i].data.value.key
+                              d["Final Opp Space"] === chartPieData[i].data.value.key
                             ) {
                               return d.opacity;
                             } else {
@@ -2306,7 +2306,7 @@
                 })
 
                 var popup_data = data.filter(function(d) {
-                    return d["Focus Area"].toLowerCase() === opp_space;
+                    return d["Final Opp Space"].toLowerCase() === opp_space;
                   });
 
                   var numStartups = popup_data.length
@@ -2326,9 +2326,9 @@
                   var maturityMode = modeArray(maturityList)
 
                   d3.select("#theme-tag").html(popup_data[0]["Theme"])
-                  d3.select("#focus-area-tag").html(popup_data[0]["Focus Area"])
-                  d3.select(".opportunity-space-title").html(popup_data[0]["Focus Area"])
-                  d3.select(".opportunity-space-description").html(popup_data[0]["Focus Area Description"])
+                  d3.select("#focus-area-tag").html(popup_data[0]["Final Opp Space"])
+                  d3.select(".opportunity-space-title").html(popup_data[0]["Final Opp Space"])
+                  d3.select(".opportunity-space-description").html(popup_data[0]["Final Opp Space Description"])
                   d3.select("#total-no-startups").html(numStartups)
                   d3.select("#total-avg-funding").html("$" + formatFunding(funding_amount) + ", $" + formatFunding(avgFunding))
                   d3.select("#avg-funding-year").html(avgYear + ", " + maturityMode[0] )
@@ -2340,7 +2340,7 @@
                   heroPopupData = []
                   hero_data.forEach(function(v) {
   
-                      if (v["Focus Area"].toLowerCase() === opp_space) {
+                      if (v["Final Opp Space"].toLowerCase() === opp_space) {
                         heroPopupData.push(v)
                       }
                   })
@@ -2707,18 +2707,18 @@
               }
   
               d["Total Funding (USD)"] = (d["Total Funding (USD)"])
-              d["Focus Area"] = d["Focus Area"]
+              d["Final Opp Space"] = d["Final Opp Space"]
                 .toLowerCase()
                 .replace(/\//g, "_");
   
               /*desc.forEach(function(v) {
                 if (
-                  d["Focus Area"] ===
-                  v["Focus Area"].toLowerCase().replace(/\//g, "_")
+                  d["Final Opp Space"] ===
+                  v["Final Opp Space"].toLowerCase().replace(/\//g, "_")
                 ) {
                   d["Theme"] = v["Theme"];
                   d["Theme Definition"] = v["Theme Definition"];
-                  d["Focus Area Description"] = v["Description"]
+                  d["Final Opp Space Description"] = v["Description"]
                 }
               });*/
             });
@@ -2760,7 +2760,7 @@
                 return d["Theme"]
               })
                 .key(function(d) {
-                return d["Focus Area"]
+                return d["Final Opp Space"]
               })
               .entries(data)
               .sort(function(a, b) {
@@ -2797,7 +2797,7 @@
             
             /*var focusAreaOrder = d3.nest()
               .key(function(d) {
-                return d["Focus Area"]
+                return d["Final Opp Space"]
               })
               .entries(data)
               .sort(function(a, b) {
@@ -2810,7 +2810,7 @@
               var focusAreaSort = focusAreaOrder
 
             data = data.filter(function(v) {
-              return focusAreaOrder.indexOf(v["Focus Area"]) >= 0
+              return focusAreaOrder.indexOf(v["Final Opp Space"]) >= 0
             })
 
   
@@ -2901,7 +2901,7 @@
               .nest()
               .key(function(d) {
                 
-                return d["Focus Area"];
+                return d["Final Opp Space"];
               })
               .sortKeys(function(a, b) {
                 let aVal = 0
@@ -2928,7 +2928,7 @@
             var count_by_focus_area = d3
               .nest()
               .key(function(d) {
-                return d["Focus Area"];
+                return d["Final Opp Space"];
               })
               .sortKeys(function(a, b) {
                 let aVal = 0
@@ -3271,7 +3271,7 @@
                   d.data.value.key.toLowerCase().replace(/ /g, "-") + "-band"
                 );
               })
-              .attr("fill", "#EF959C")
+              .attr("fill", "#D22130")
               .each(function(d, i) {
                 var firstArcSection = /(^.+?)L/;
                 var newArc = firstArcSection.exec(d3.select(this).attr("d"))[1];
@@ -3759,7 +3759,7 @@
             var nodeData = d3
             .nest()
             .key(function(d) {
-              return d["Focus Area"];
+              return d["Final Opp Space"];
             })
             .key(function(d) {
               return d["Maturity"];
@@ -3772,7 +3772,7 @@
             var nodeSecondData = d3
               .nest()
               .key(function(d) {
-                return d["Focus Area"];
+                return d["Final Opp Space"];
               })
               .key(function(d) {
                 return d["Founded"];
@@ -3785,7 +3785,7 @@
             var nodeThirdData = d3
               .nest()
               .key(function(d) {
-                return d["Focus Area"];
+                return d["Final Opp Space"];
               })
               .key(function(d) {
                 return d["Founded"];
@@ -3814,7 +3814,7 @@
             data.forEach(function(d) {
                 for (i = 0; i < chartPieData.length; i++) {
                   if (
-                    d["Focus Area"] === chartPieData[i].data.value.key
+                    d["Final Opp Space"] === chartPieData[i].data.value.key
                   ) {
                     var tmp_startAngleMin = chartPieData[i].startAngle
                     var tmp_endAngleMax = chartPieData[i].endAngle
@@ -3829,7 +3829,7 @@
                   }
                 }
                 for (i = 0; i < nodeData.length; i++) {
-                  if (nodeData[i].key === d["Focus Area"]) {
+                  if (nodeData[i].key === d["Final Opp Space"]) {
                     for (j = 0; j < nodeData[i].values.length; j++) {
                       if (nodeData[i].values[j].key === d["Maturity"]) {
 
@@ -3860,7 +3860,7 @@
                             tmp_outerRadiusMax,
                             nodeData[i].values[j]
                           )
-                          indexTracker[d["Focus Area"]][d["Maturity"]]["slot"] += 1
+                          indexTracker[d["Final Opp Space"]][d["Maturity"]]["slot"] += 1
                         }
 
 
@@ -3890,7 +3890,7 @@
             var nodeSecondList = [];
             data.forEach(function(d) {
               for (i = 0; i < chartPieData.length; i++) {
-                if (d["Focus Area"] === chartPieData[i].data.value.key) {
+                if (d["Final Opp Space"] === chartPieData[i].data.value.key) {
                   var tmp_startAngleMin = chartPieData[i].startAngle
                   var tmp_endAngleMax = chartPieData[i].endAngle
                   break;
@@ -3905,7 +3905,7 @@
                 }
               }
               for (i = 0; i < nodeSecondData.length; i++) {
-                if (nodeSecondData[i].key === d["Focus Area"]) {
+                if (nodeSecondData[i].key === d["Final Opp Space"]) {
                   for (j = 0; j < nodeSecondData[i].values.length; j++) {
                     if (nodeSecondData[i].values[j].key === d["Founded"]) {
                         var congestion = calcCongestion(
@@ -3934,7 +3934,7 @@
                             tmp_outerRadiusMax,
                             nodeSecondData[i].values[j]
                           )
-                          indexTrackerYear[d["Focus Area"]][d["Founded"]]["slot"] += 1
+                          indexTrackerYear[d["Final Opp Space"]][d["Founded"]]["slot"] += 1
 
                         }
                     }
@@ -3953,7 +3953,7 @@
               var nodeThirdList = [];
                 data.forEach(function(d) {
                   for (i = 0; i < chartPieData.length; i++) {
-                    if (d["Focus Area"] === chartPieData[i].data.value.key) {
+                    if (d["Final Opp Space"] === chartPieData[i].data.value.key) {
                       var tmp_startAngleMin = chartPieData[i].startAngle + 0.025;
                       var tmp_endAngleMax = chartPieData[i].endAngle - 0.025;
                       break;
@@ -3968,7 +3968,7 @@
                     }
                   }
                   for (i = 0; i < nodeThirdData.length; i++) {
-                    if (nodeThirdData[i].key === d["Focus Area"]) {
+                    if (nodeThirdData[i].key === d["Final Opp Space"]) {
                       for (j = 0; j < nodeThirdData[i].values.length; j++) {
                         if (nodeThirdData[i].values[j].key === d["Founded"]) {
                           var results = assignRandom(
@@ -4230,7 +4230,7 @@
               }
               if (type === "focus area" && filterKey !== "") {
                 nodes.attr("opacity", function(d) {
-                  if (d["Focus Area"].toLowerCase() !== filterKey) {
+                  if (d["Final Opp Space"].toLowerCase() !== filterKey) {
                     d.opacity = 0.3;
                   } else {
                     d.opacity = 1;
@@ -5224,7 +5224,7 @@
               desc.forEach(function(v) {
                 if (
                   segment_data.data.value.key ===
-                  v["Focus Area"].toLowerCase().replace(/\//g, "_")
+                  v["Final Opp Space"].toLowerCase().replace(/\//g, "_")
                 ) {
                   segmentDesc = v.Description;
                 }
@@ -5363,7 +5363,7 @@
               var count_by_focus_area = d3
                 .nest()
                 .key(function(d) {
-                  return d["Focus Area"];
+                  return d["Final Opp Space"];
                 })
               .sortKeys(function(a, b) {
                 let aVal = 0
@@ -5389,7 +5389,7 @@
                 );
   
               nodes.attr("opacity", function(d) {
-                if (d["Focus Area"] === segment_data.data.value.key) {
+                if (d["Final Opp Space"] === segment_data.data.value.key) {
                   return 1;
                 } else {
                   return 0.3;
@@ -5397,7 +5397,7 @@
               });
   
               nodes_acquired.attr("opacity", function(d) {
-                if (d["Focus Area"] === segment_data.data.value.key) {
+                if (d["Final Opp Space"] === segment_data.data.value.key) {
                   return 1;
                 } else {
                   return 0.3;
@@ -5479,7 +5479,7 @@
               /*desc.forEach(function(v) {
                 if (
                   segment_data.data.value.key ===
-                  v["Focus Area"].toLowerCase().replace(/\//g, "_")
+                  v["Final Opp Space"].toLowerCase().replace(/\//g, "_")
                 ) {
                   segmentDesc = v.Description;
                 }
@@ -5487,7 +5487,7 @@
             var count_by_focus_area = d3
               .nest()
               .key(function(d) {
-                return d["Focus Area"];
+                return d["Final Opp Space"];
               })
               .sortKeys(function(a, b) {
                 let aVal = 0
@@ -5913,7 +5913,7 @@
                     .append("path")
                     .classed("segment-band", true)
                     .attr("d", segmentLabelBandArc)
-                    .attr("fill", "#EF959C")
+                    .attr("fill", "#D22130")
   
                   var tmpLabels = tmp_chartSVG
                     .append("g")
@@ -6028,7 +6028,7 @@
                     })
                     .attr("opacity", function(d) {
                       if (
-                        d["Focus Area"] === chartPieData[i].data.value.key
+                        d["Final Opp Space"] === chartPieData[i].data.value.key
                       ) {
                         return d.opacity;
                       } else {
@@ -6077,7 +6077,7 @@
                     })
                     .attr("opacity", function(d) {
                       if (
-                        d["Focus Area"] === chartPieData[i].data.value.key
+                        d["Final Opp Space"] === chartPieData[i].data.value.key
                       ) {
                         return d.opacity;
                       } else {
@@ -6487,7 +6487,7 @@
             loop1:
             for (let hi = 0; hi <= horizontalCuts; hi++) {
               index ++
-            if (index === indexTrackerYear[data["Focus Area"]][data["Founded"]]["slot"]) {
+            if (index === indexTrackerYear[data["Final Opp Space"]][data["Founded"]]["slot"]) {
               horizontalSlot = hi
               verticalSlot = vi
               break loop0
@@ -6548,7 +6548,7 @@
             loop1:
             for (let hi = 0; hi <= horizontalCuts; hi++) {
               index ++
-            if (index === indexTracker[data["Focus Area"]][data["Maturity"]]["slot"]) {
+            if (index === indexTracker[data["Final Opp Space"]][data["Maturity"]]["slot"]) {
               horizontalSlot = hi
               verticalSlot = vi
               break loop0
