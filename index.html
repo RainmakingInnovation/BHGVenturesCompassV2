@@ -1733,7 +1733,7 @@
             data = data.filter(function(d) {
               return d["Inc. Radar"] == "TRUE";
             }).filter(function(d) {
-              return filtered_choicces.indexOf(d["Final Opp Space"]) > 0;
+              return filtered_choicces.indexOf(d["Final Opp Space"]) >= 0;
             })
                   
             console.log('data',data)
